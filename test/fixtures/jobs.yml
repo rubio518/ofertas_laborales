@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  tittle: MyString
+  company: MyString
+  email: MyString
+  salary: 9.99
+  description: MyText
+
+two:
+  tittle: MyString
+  company: MyString
+  email: MyString
+  salary: 9.99
+  description: MyText

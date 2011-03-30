@@ -1,0 +1,57 @@
+<h1>Listing jobs</h1>
+
+<table border = 1>
+  <tr>
+    <th>Tittle</th>
+    <th>Company</th>
+  
+    <th>Salary</th>
+    
+    <th></th>
+    
+  </tr>
+</	<%= $max = 0%>>
+</	<%= $xml = ".xml"%>>
+<% @jobs.each do |job| %>
+  <tr>	
+	
+    <td id = <%= $max = $max +1 %>> <%= link_to job.tittle, job_path(job.id),:class => "links"%> </td>
+    <td><%= job.company %></td>
+    
+    
+    <td><%= job.salary %></td>
+   
+    <td><%= link_to 'Show', job %></td> 
+
+  </tr>
+<% end %>
+
+</table>
+<div id="sexo">
+</div> 
+<br />
+ 
+<%= link_to 'New Job', new_job_path %>
+<script>
+jQuery(".links").click(function(){
+	var link = jQuery(this).attr('href');
+	
+	jQuery.ajax({
+		
+		cache:false,
+		url: link,
+		success :function(data){
+			jQuery('#sexo').html("el resultado es " + data);
+			},
+		error: function(){
+			alert('ocurrio un error' );
+		}
+		
+	});
+	return false;
+});
+
+
+
+
+</script>
